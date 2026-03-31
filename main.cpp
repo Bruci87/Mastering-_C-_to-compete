@@ -7,26 +7,18 @@ Welcome to GDB Online.
 
 *******************************************************************************/
 #include <bits/stdc++.h>
- using namespace std;
- int main(){
-     int temp;
-     vector<long long > array(6);
-     array[0]=0;
-     array[1]=1;
-     array[2]=3;
-     array[3]=0;
-     array[4]=7;
-     array[5]=4;
-     for(int i =0; i< 6; i++){
-         for(int j=0; j< 5; j++){
-            if(array[j] > array[j+1]){
-             temp = array[j+1];
-             array[j+1] = array[j];
-             array[j]=temp;
-            }
-        }
+using namespace std;
+int main(){
+    vector<int> array = {1, 2, 3, 5, 7, 9};
+    int n=6, x=5, j=0;
+    for(int i = n/2; i<=1; i/=2){
+        while(j+i < n && array[j+i]<= x)
+        j += i;
     }
-    for(int i=0; i<6; i++){
-        cout<<"\n "<<array[i];
+    if(array[j]=x){
+        cout<<"Achou";
+    }else{
+        cout<<"Nop";
     }
- }
+    
+}
